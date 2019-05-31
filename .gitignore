@@ -1,0 +1,15 @@
+### IntelliJ ###
+*.iml
+*.ipr
+*.iws
+*.ids
+.idea/
+
+target/
+
+### jenv
+.java-version
+.envrc
+
+### OSX
+.DS_Store
