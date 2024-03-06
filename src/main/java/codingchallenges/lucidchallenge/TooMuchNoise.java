@@ -1,4 +1,4 @@
-package main.codingchallenges.lucidchallenge;
+package codingchallenges.lucidchallenge;
 
 import java.util.HashMap;
 import java.util.Map;

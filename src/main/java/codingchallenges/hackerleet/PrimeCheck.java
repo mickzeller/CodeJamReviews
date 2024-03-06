@@ -1,4 +1,4 @@
-package main.codingchallenges.hackerleet;
+package codingchallenges.hackerleet;
 
 
 public class PrimeCheck {

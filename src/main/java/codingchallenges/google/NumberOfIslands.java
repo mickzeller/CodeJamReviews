@@ -1,4 +1,4 @@
-package main.codingchallenges.google;
+package codingchallenges.google;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,6 +18,8 @@ public class NumberOfIslands {
                 {'1', '1', '0', '0', '0'},
                 {'0', '0', '0', '1', '1'}};
         System.out.println(numIslandsQueue(array));
+        System.out.println("---------------------------------------");
+        System.out.println(numIslands(array));
     }
 
     public static int numIslandsQueue(char[][] grid) {

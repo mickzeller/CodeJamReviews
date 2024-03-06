@@ -1,4 +1,4 @@
-package main.codingchallenges.google;
+package codingchallenges.google;
 
 import java.util.Arrays;
 import java.util.HashMap;

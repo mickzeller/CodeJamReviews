@@ -1,4 +1,4 @@
-package main.codingchallenges.hackerleet;
+package codingchallenges.hackerleet;
 
 public class SingleLinkedList {
     //Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)

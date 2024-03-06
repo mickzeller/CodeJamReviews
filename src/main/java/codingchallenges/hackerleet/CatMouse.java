@@ -1,51 +1,60 @@
-package main.codingchallenges.hackerleet;
+package codingchallenges.hackerleet;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CatMouse {
 
-    private static final Scanner scanner = new Scanner(System.in);
+//    private static final String LINE_SEPARATOR_REGEX = "(\r\n|[\n\r\u2028\u2029\u0085])?";
+    private static final char SPACE_SEPARATOR = ' ';
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final String FILE_PATH = "cat-mouse-test";
+    private static final String CAT_A_WIN = "Cat A";
+    private static final String CAT_B_WIN = "Cat B";
+    private static final String MOUSE_WIN = "Mouse wins";
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("codingchallenges/test")));
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            int queryCount = 0;
+            try {
+                queryCount = SCANNER.nextInt();
+                if (queryCount < 0) {
+                    System.out.println("Number of queries cannot be negative");
+                }
+                SCANNER.nextLine();  // consume newline left-over
+            } catch (InputMismatchException e) {
+                System.out.println("Input was not an integer");
+            }
 
-        int q = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+            for (int queryIndex = 0; queryIndex < queryCount; queryIndex++) {
+                String[] queryParameters = SCANNER.nextLine().split(String.valueOf(SPACE_SEPARATOR));
 
-        for (int qItr = 0; qItr < q; qItr++) {
-            String[] xyz = scanner.nextLine().split(" ");
+                int x = parseInt(queryParameters[0]);
+                int y = parseInt(queryParameters[1]);
+                int z = parseInt(queryParameters[2]);
 
-            int x = Integer.parseInt(xyz[0]);
-
-            int y = Integer.parseInt(xyz[1]);
-
-            int z = Integer.parseInt(xyz[2]);
-
-            String result = catAndMouse(x, y, z);
-
-            bufferedWriter.write(result);
-            bufferedWriter.newLine();
-            String output = catAndMouse(x, y, z);
-            bufferedWriter.write(output);
+                String resultOutput = catAndMouse(x, y, z);
+                bufferedWriter.write(resultOutput);
+                bufferedWriter.newLine();
+            }
         }
-        bufferedWriter.close();
-        scanner.close();
+        SCANNER.close();
     }
 
-    // Complete the catAndMouse function below.
+    private static int parseInt(String numberStr) {
+        return Integer.parseInt(numberStr);
+    }
+
     static String catAndMouse(int x, int y, int z) {
-
-        if (Math.abs(x - z) == Math.abs(y - z)) {
-            return "Mouse wins";
-        }
-        if (Math.abs(x - z) > Math.abs(y - z)) {
-            return "Cat B";
+        if (Math.abs(x - z) < Math.abs(y - z)) {
+            return CAT_A_WIN;
+        } else if (Math.abs(x - z) > Math.abs(y - z)) {
+            return CAT_B_WIN;
         } else {
-            return "Cat A";
+            return MOUSE_WIN;
         }
-
     }
 }

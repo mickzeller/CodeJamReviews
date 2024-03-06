@@ -1,6 +1,13 @@
-package main.codingchallenges.timed.events;
+package codingchallenges.hackerleet.timed.events;
+import codingchallenges.hackerleet.timed.events.TreeNode;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
 
 public class Mock {
 
@@ -31,7 +38,7 @@ public class Mock {
                 }
             }
         }
-        throw null;
+        return k;
     }
 
     public void dfs(Map<TreeNode, List<TreeNode>> graph, TreeNode node, TreeNode parent) {

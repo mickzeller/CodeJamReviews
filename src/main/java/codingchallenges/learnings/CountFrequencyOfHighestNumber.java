@@ -1,4 +1,4 @@
-package main.learnings;
+package codingchallenges.lucidchallenge;
 
 import java.util.Arrays;
 import java.util.Collections;

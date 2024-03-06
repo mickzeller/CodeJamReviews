@@ -1,4 +1,4 @@
-package main.learnings.schoolassignment;
+package codingchallenges.lucidchallenge.schoolassignment;
 /********************************************************
  *
  *  Project :  A04 Merge Sort
@@ -37,7 +37,7 @@ package main.learnings.schoolassignment;
  *  	|					|								 |
  *  	|					|							     |
  *  	|				   / \					  		    / \
- *  	|			DIVIDE-AND-CONQURE			   DIVIDE-AND-CONQURE
+ *  	|			DIVIDE-AND-CONQUER			   DIVIDE-AND-CONQUER
  *  	|				 /     \						/		  \
  *  	|				/		\				 	   /		   \
  *  	^	 SubARRAY[p,q-1] SubARRAY[q,r]	   SubARRAY[p,q-1]	  SubARRAY[q,r]					(N/4)
@@ -206,7 +206,7 @@ public class MergeSorting {
      * @return the linked list
      */
     private static LinkedList<Integer> randomNumList() {
-        LinkedList<Integer> list = new LinkedList<Integer>();
+        LinkedList<Integer> list = new LinkedList<>();
         //setting the range for random numbers
         int min = 0;
         int max = 1000;

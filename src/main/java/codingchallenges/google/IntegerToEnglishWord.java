@@ -1,48 +1,55 @@
-package main.codingchallenges.google;
+package codingchallenges.google;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static java.util.Map.entry;
 
 public class IntegerToEnglishWord {
 
     public static void main(String[] args) {
-        int number = 123;
-        StringBuilder num = new StringBuilder();
+        int number = 217128725;
+        StringBuilder numericStringBuilder = new StringBuilder();
         System.out.println(number % 1000);
-        Map<Integer, String> hashMap = new HashMap<>();
-        hashMap.put(1, "One");
-        hashMap.put(2, "Two");
-        hashMap.put(3, "Three");
-        hashMap.put(4, "Four");
-        hashMap.put(5, "Five");
-        hashMap.put(6, "Six");
-        hashMap.put(7, "Seven");
-        hashMap.put(8, "Eight");
-        hashMap.put(9, "Nine");
+        Map<Integer, String> hashMap = Map.ofEntries(
+                entry(1, "one"),
+                entry(2, "two"),
+                entry(3, "three"),
+                entry(4, "four"),
+                entry(5, "five"),
+                entry(6, "six"),
+                entry(7, "seven"),
+                entry(8, "eight"),
+                entry(9, "nine")
+        );
 
+        Map<Integer, String> decimalPlace = Map.ofEntries(
+                entry(10, "th"),
+                entry(100, "Hundred"),
+                entry(1000, "Thousand"),
+                entry(1_000_000, "Million"),
+                entry(1_000_000_000, "Billion")
+        );
+        int num = 2454252;
+        System.out.println("digitSum(2454252) " + digitSum(num));
+        String[] numbersToEnglish = intToString(number, numericStringBuilder, hashMap);
 
-        Map<Integer, String> decimalPlace = new HashMap<>();
-        decimalPlace.put(10, "th");
-        decimalPlace.put(100, "Hundred");
-        decimalPlace.put(1000, "Thousand");
-        decimalPlace.put(1_000_000, "Million");
-        decimalPlace.put(1_000_000_000, "Billion");
-
-        String output = intToString(number, num, hashMap);
-        System.out.println(digitLength(123456789));
-
+        System.out.println("digitLength(217128725) " + digitLength(number));
     }
 
-    private static String intToString(int number, StringBuilder num, Map<Integer, String> map) {
+    private static String[] intToString(int number, StringBuilder numericStringBuilder, Map<Integer, String> map) {
         String stringInt = Integer.toString(number);
-        for (int i = 0; i < stringInt.length(); i++) {
-            if (map.containsKey(Integer.parseInt(stringInt.substring(i, i + 1)))) {
-                num.append(map.get(Integer.parseInt(stringInt.substring(i, i + 1))));
-            }
-        }
-        System.out.println(num);
+        IntStream.range(0, stringInt.length())
+                .map(i -> Character.getNumericValue(stringInt.charAt(i)))
+                .filter(map::containsKey)
+                .mapToObj(i -> map.getOrDefault(i, "") + " ")
+                .forEach(numericStringBuilder::append);
 
-        return "";
+        return numericStringBuilder.toString().split(" ");
     }
 
 

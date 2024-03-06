@@ -1,4 +1,4 @@
-package main.codingchallenges.google;
+package codingchallenges.google;
 
 import java.io.IOException;
 import java.nio.file.Files;

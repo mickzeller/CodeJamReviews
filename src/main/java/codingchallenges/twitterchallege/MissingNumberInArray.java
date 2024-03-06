@@ -1,3 +1,5 @@
+package codingchallenges.twitterchallege;
+
 import java.util.stream.Stream;
 
 public class MissingNumberInArray {

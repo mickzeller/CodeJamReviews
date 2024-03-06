@@ -1,4 +1,4 @@
-package main.javaforeveryonebook;
+package codingchallenges.learnings.javaforeveryonebook;
 
 import java.util.ArrayList;
 import java.util.HashMap;

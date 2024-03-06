@@ -1,4 +1,4 @@
-package main.codingchallenges.google.interviewbook;
+package codingchallenges.google.interviewbook;
 
 public class Solution {
 

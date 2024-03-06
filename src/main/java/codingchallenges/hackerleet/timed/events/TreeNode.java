@@ -1,4 +1,4 @@
-package main.codingchallenges.timed.events;
+package codingchallenges.hackerleet.timed.events;
 
 public class TreeNode {
     public TreeNode right;

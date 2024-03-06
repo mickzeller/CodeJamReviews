@@ -1,4 +1,4 @@
-package main.learnings;
+package codingchallenges.lucidchallenge;
 
 public class LastLowerCaseLetter {
 

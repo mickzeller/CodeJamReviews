@@ -1,4 +1,4 @@
-package main.learnings;
+package codingchallenges.lucidchallenge;
 
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;

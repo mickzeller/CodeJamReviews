@@ -1,4 +1,4 @@
-package main.codingchallenges.google.interviewbook;
+package codingchallenges.google.interviewbook;
 
 import java.util.HashSet;
 import java.util.Set;

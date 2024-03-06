@@ -1,4 +1,4 @@
-package main.codingchallenges.hackerleet;
+package codingchallenges.hackerleet;
 
 import java.math.BigInteger;
 import java.util.stream.Stream;

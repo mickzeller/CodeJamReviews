@@ -1,4 +1,4 @@
-package main.codingchallenges.google;
+package codingchallenges.google;
 
 import java.util.HashSet;
 import java.util.Set;

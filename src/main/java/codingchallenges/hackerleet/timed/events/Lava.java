@@ -1,4 +1,4 @@
-package main.codingchallenges.timed.events;
+package codingchallenges.timed.events;
 
 
 import java.util.*;

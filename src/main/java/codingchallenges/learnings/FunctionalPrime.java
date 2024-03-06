@@ -1,4 +1,4 @@
-package main.learnings;
+package codingchallenges.learnings;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

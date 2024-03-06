@@ -1,4 +1,4 @@
-package main.codingchallenges.google;
+package codingchallenges.google;
 
 public class Interval {
     int start;
